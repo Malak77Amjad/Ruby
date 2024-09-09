@@ -1,0 +1,23 @@
+import java.util.ArrayList;
+import java.util.List;
+
+public class FibonacciChallenge {
+    public static List<Integer> fibonacciSequence(int n) {
+        List<Integer> sequence = new ArrayList<>();
+        sequence.add(0);
+        sequence.add(1);
+
+        for (int i = 2; i < n; i++) {
+            int nextNumber = sequence.get(i - 1) + sequence.get(i - 2);
+            sequence.add(nextNumber);
+        }
+
+        return sequence;
+    }
+
+    public static void main(String[] args) {
+        int n = 12;  
+        List<Integer> fibSequence = fibonacciSequence(n);
+        System.out.println(fibSequence);
+    }
+}
